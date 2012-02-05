@@ -1,0 +1,89 @@
+Genetic Hurricane Poker
+
+
+Domains
+
+  D = [ace,2,3,4,5,6,7,8,9,ten,jack,queen,king]  # Denomination
+  C = [lt,gt,le,ge,eq,ne]                        # Comparison
+  B = [fold,call,bet1,bet2,bet3]                 # Betting action
+  X = [keep,low,high]                            # Discard?
+  R = [1,2]                                      # Round
+  A = [0,1,2,3,4,5,6,7,8,9]                      # Amount to call
+  N = [0,1,2,3]                                  # Number of preceding bets
+  P = [0,1,2,3,4,5,6,7,8]                        # Player count (not folded)
+  
+  
+Goals
+
+  action(R,B)
+  discard(D)
+  
+  
+Predicates
+
+  # Do we have the corresponding denomination in our hand?
+  haveDenom(C,D)
+  
+  # Check the lowest denomination in our hand.
+  lowestDenom(C,D)
+  
+  # Check the highest denomination in our hand.
+  highestDenom(C,D)
+  
+  # Do we have a corresponding pair in our hand?
+  havePair(C,D)
+  
+  # Check the call amount.
+  callAmount(C,A)
+  
+  # Check the number of preceding bets.
+  betCount(C,N)
+  
+  # Check the number of players still in hand.
+  playerCount(C,P)
+  
+
+Genome
+
+    Use hexadecimal characters.
+
+  Initiator/Terminator
+  
+    Gene starts at ###, ends at matching ### (may involve wrap-around).
+
+  Type
+  
+    0 = action(1,fold)
+    1 = action(1,call)
+    2 = action(1,bet1)
+    3 = action(1,bet2)
+    4 = action(1,bet3)
+    5 = action(2,fold)
+    6 = action(2,call)
+    7 = action(2,bet1)
+    8 = action(2,bet2)
+    9 = action(2,bet3)
+    A = discard(keep)
+    B = discard(low)
+    C = discard(high)
+    D = no-op
+    E = no-op
+    F = no-op
+    
+  Predicate
+  
+    0,7 = haveDenom(C,D)
+  
+    1,8 = lowestDenom(C,D)
+  
+    2,9 = highestDenom(C,D)
+  
+    3,A = havePair(C,D)
+  
+    4,B = callAmount(C,A)
+  
+    5,C = betCount(C,N)
+  
+    6,D = playerCount(C,P)
+    
+    E,F = no-op

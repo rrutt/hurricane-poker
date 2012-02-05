@@ -1,0 +1,191 @@
+<p>
+Hurricane is two-card draw poker,
+deuces wild, played as high/low;
+aces, deuces play both high and low.
+</p>
+<p>
+No straights, no flushes are used;
+only pairs and high-card hands occur.
+</p>
+<p>
+Checking is allowed;
+the maximum bet or raise is $3.
+1 bet and 2 raises are allowed
+per betting round.
+</p>
+<p>
+After dealing two cards to each
+player, the player to the dealer's
+left starts the first betting round.
+This is the "leading edge" of
+the storm.
+</p>
+<p>
+After the first round of betting,
+players may optionally discard a card
+and draw a replacement.
+This is the "eye of the storm".
+</p>
+<p>
+The player to the dealer's left
+then starts the final betting round.
+This is the "trailing edge" of
+the storm.
+</p>
+<p>
+After the final round of betting,
+there is a showdown among the
+survivors, and damage is assessed!
+</p>
+<p>
+The High hand and the Low hand
+split the pot.
+(Odd chip goes to the High hand.)
+If hands are tied, those players
+divide that half of the pot evenly.
+</p>
+<p>
+Remember that 2's are wild,
+and can be used as different cards
+in the High and the Low hands.
+However, two 2's are always a pair.
+</p>
+<p>
+An Ace is the top card in High hands,
+and the low card in Low hands.
+An "Acey-Deucy" (A2) always wins
+both High hand (as a pair of Aces)
+and Low hand (as an Ace and a Deuce).
+</p>
+<p>
+For the high hand A2 ties with 22
+as a pair of Aces; for the low hand
+A2 beats 22 since 22 is still a low pair,
+and A2 chooses a natural 2 for the wild value.
+</p>
+<p>
+For the low hand 23 ties with A3 since 
+23 chooses Ace for the wild value.
+</p>
+<p>
+Eight players sit at the octagonal
+poker table.  The house randomly
+assigns you a seat (marked with )
+and picks the first dealer
+(marked with a card deck: ð).
+</p>
+<p>
+To start a hand, select "Deal" from
+the main menu.
+</p>
+<p>
+Select "New Deck" from the main menu
+to open and shuffle a new deck
+of cards.
+</p>
+<p>
+A player may go into debt to finish
+a hand.
+When any player has no money for the
+ante, the game is over.
+The remaining stakes of all players
+are then shown.
+</p>
+<p>
+Shorthand symbols are used to show
+the betting action.
+</p>
+<code>
+After the initial deal, the player
+seats are shown as follows:
+
+#1 --
+ö2 Q5
+#3=--
+
+The "ö" shows the seated human.
+The "Q5" are the human's cards.
+The "--" are the opponents' cards.
+The "=" is the dealer's card deck.
+
+Below the seats, the amount of
+money in the pot and the human's
+stake are shown:
+
+ Pot: $3
+ ö $99
+
+The following symbols are used
+to display the betting action:
+
+ #  Means the player Checked
+ +n Means the player Bet or Raised $n
+ =n Means the player Called $n
+ x  Means the player Folded
+
+ ±  Means the player Drew a card
+ -  Means the player Held both cards
+
+For example, reading top to bottom,
+left to right:
+
+#1 -- # +1± # =3
+ö2 Q2 +2=1- +3
+#3=   =2=1± x
+
+ #1 Checked, #2 Bet $2, #3 Called.
+ #1 Raised $1, #2 and #3 called.
+ #1 Drew a card, #2 Held, #3 Drew.
+ #1 Checked, #2 Bet $3, #3 Folded.
+ #1 Called.
+
+Finally, there is the Showdown,
+which uses three new symbols:
+
+ $n Means the player won $n
+ !  Means the player had High hand
+ ¡ Means the player had Low hand
+
+#1¡54 # +1± # =3 $4
+ö2 Q2! +2=1- +3 $5
+#3=   =2=1± x
+
+ #1 had Low hand, winning $4.
+ #2 had High hand, winning $5.
+    (Odd chip goes to the High hand.)
+</code>
+<p>
+Just before exiting the game,
+the player information is shown,
+with the added information about
+what "strategy" each player used:
+</p>
+<code>
+  random    Make arbitrary choices
+
+  checker   Always Check, Call, Hold
+
+  pairwise  Try for a pair
+
+  highrise  Try for High hand,
+            typically discarding
+            the lowest card
+
+  lowdown   Try for Low hand,
+            typically discarding
+            the highest card
+
+  hilo      Try for either High or
+            Low hand, typically
+            discarding "middle" cards
+
+  foldout   Fold early if prospects
+            are poor
+
+  human     That's for YOU to decide!
+</code>
+<applet code = 'com.live.rrutt.hurricane.HurricanePokerApplet' 
+    archive = 'HurricanePoker.jar', 
+    width = '200', 
+    height = '200' />
+</body>
