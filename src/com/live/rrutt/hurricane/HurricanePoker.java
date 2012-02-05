@@ -1,6 +1,6 @@
 package com.live.rrutt.hurricane;
 
-import com.live.rrutt.tuprolog.lib.PrologPredicates;
+import com.live.rrutt.tuprolog.lib.PrologPredicatesAndFunctors;
 import com.live.rrutt.tuprolog.util.*;
 
 import alice.tuprolog.*;
@@ -33,10 +33,10 @@ public class HurricanePoker
 		for (String arg : args) {
 			if ((arg.length() > 1) && (arg.charAt(0) == '-')) {
 				if (arg.equalsIgnoreCase("-peek")) {
-					PrologPredicates.enablePeeking = true;
+					PrologPredicatesAndFunctors.enablePeeking = true;
 					System.out.println("Peek output enabled.");
 				} else if (arg.equalsIgnoreCase("-spy")) {
-					PrologPredicates.enableSpying = true;
+					PrologPredicatesAndFunctors.enableSpying = true;
 					System.out.println("Spy output enabled.");
 				} else {
 					System.out.println("Unknown command argument ignored: " + arg);
@@ -52,13 +52,13 @@ public class HurricanePoker
 		setBounds(0, 350, 450, 250);
 		engine = new Prolog();
 		try {
-			engine.loadLibrary("com.live.rrutt.tuprolog.lib.PrologPredicates");
+			engine.loadLibrary("com.live.rrutt.tuprolog.lib.PrologPredicatesAndFunctors");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		engine.addOutputListener(this);
 		engine.addSpyListener(this);
-		engine.setSpy(PrologPredicates.enableSpying);
+		engine.setSpy(PrologPredicatesAndFunctors.enableSpying);
 
 		setVisible(true);
 
@@ -144,7 +144,7 @@ public class HurricanePoker
 	}
 
 	protected void exitForm(java.awt.event.WindowEvent evt) {
-		PrologPredicates.disposeTextWindow();
+		PrologPredicatesAndFunctors.disposeTextWindow();
 				
 		this.setVisible(false);
 		this.dispose();

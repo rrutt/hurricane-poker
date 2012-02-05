@@ -198,7 +198,7 @@
   		retract_player_mode(P, human),
   		fail.
   set_player(human) :-
-  	random_int(8, P),
+  	P is random_int(8),
   	retract_player_mode(P, clear),
 	asserta(player_mode(P, human)).
 
@@ -211,7 +211,7 @@
 
   set_player(dealer) :-
   	not(player_mode(_, dealer)), !,
-  	random_int(8, P),
+  	P is random_int(8),
   	asserta(player_mode(P, dealer)).
   set_player(dealer) :-
   	player_mode(P, dealer), !,
@@ -221,7 +221,7 @@
 
 
   pick_random_mode(0, M) :-
-  	random_int(7, N),
+  	N is random_int(7),
   	pick_random_mode(N, M).
   pick_random_mode(1, random).
   pick_random_mode(2, checker).
@@ -489,7 +489,7 @@
   shuffle_deck(split):-
   	card_deck(main, DNM),
 		retract_card_deck(main, DNM),
-		random_double(RR),
+		RR is random_double,
 		split_card_to_pile(DNM, RR),
 		fail. 
   shuffle_deck(split) :- !.
@@ -732,11 +732,11 @@
 
 
   get_action(bet, random, P, _, R, T, ACT, B) :-
-  	random_int(5, N),
+  	N is random_int(5),
   	get_action(bet, index, P, N, R, T, ACT, B).
 
   get_action(draw, random, P, _, _, _, ACT, B) :-
-  	random_int(3, X),
+  	X is random_int(3),
   	get_action(draw, index, P, X, 0, 0, ACT, B).
 
 
