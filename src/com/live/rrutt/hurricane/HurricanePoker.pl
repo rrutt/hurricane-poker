@@ -72,7 +72,7 @@
 	player_amt(P, stake, A),
 	A > 100,
 	text_cursor(P,1),
-  	text_write("ö"),  % Smiley face 
+  	text_write("Ã¶"),  % Smiley face 
 	fail.
   game_over(-1) :-
 	text_cursor(0,10),
@@ -88,7 +88,7 @@
 	player_amt(P, stake, A),
 	A = 100,
 	text_cursor(P,10),
-  	text_write("ö"),  % Smiley face 
+  	text_write("Ã¶"),  % Smiley face 
 	fail.
   game_over(-1) :-
 	text_cursor(0,19),
@@ -104,7 +104,7 @@
 	player_amt(P, stake, A),
 	A >= 0, A < 100,
 	text_cursor(P,19),
-  	text_write("ö"),  % Smiley face 
+  	text_write("Ã¶"),  % Smiley face 
 	fail.
   game_over(-1) :-
 	text_cursor(0,28),
@@ -120,7 +120,7 @@
 	player_amt(P, stake, A),
 	A < 0,
 	text_cursor(P,28),
-  	text_write("ö"),  % Smiley face 
+  	text_write("Ã¶"),  % Smiley face 
 	fail.
   game_over(-1) :-
   	player_amt(0, hand, H),
@@ -304,11 +304,11 @@
 	!,
 	player_mode(P, human),
 	text_cursor(P, 0),
-	text_write("ö"),  % Smiley face 
+	text_write("Ã¶"),  % Smiley face 
 	player_amt(P, stake, A),
 	str_int(SA, A),
 	text_cursor(12, 1),
-	text_write("ö $"), text_write(SA), text_write("     ").  % Smiley face 
+	text_write("Ã¶ $"), text_write(SA), text_write("     ").  % Smiley face 
 
   show_players(dealer) :-
 	!,
@@ -356,7 +356,7 @@
   show_players(info) :-
 	player_mode(P, human),
 	text_cursor(P, 0),
-	text_write("ö"),  % Smiley face 
+	text_write("Ã¶"),  % Smiley face 
 	fail.
   show_players(info) :-
 	player_amt(P, high, A),
@@ -704,7 +704,7 @@
 	N1 is N - 1,
 	player_round(draw, NP, N1, 0, 0, 0).
   player_round(high, P, N, _, _, _) :-
-	add_player_text(P, "± "), !,  % Plus-or-minus 
+	add_player_text(P, "Â± "), !,  % Plus-or-minus 
 	write("Player "), write(P), write(" draws a card"), nl,
 	add_player_amt(0, draws, 1),
 	player_hand(P, C1, C2),
@@ -717,7 +717,7 @@
 	N1 is N - 1,
 	player_round(draw, NP, N1, 0, 0, 0).
   player_round(low, P, N, _, _, _) :-
-	add_player_text(P, "± "), !,  % Plus-or-minus 
+	add_player_text(P, "Â± "), !,  % Plus-or-minus 
 	write("Player "), write(P), write(" draws a card"), nl,
 	add_player_amt(0, draws, 1),
 	player_hand(P, C1, C2),
@@ -1047,13 +1047,13 @@
   	player_hand_score(P, low, _),
   		add_player_amt(P, low, 1),
   		text_cursor(P, 2),
-  		text_write("¡"),
+  		text_write("â–¼"),
   		fail.  % Loop for any ties 
   decide_hands :-
   	player_hand_score(P, high, _),
   		add_player_amt(P, high, 1),
   		text_cursor(P, 5),
-  		text_write("!"),
+  		text_write("â–²"),
   		fail.  % Loop for any ties 
   decide_hands :-  % Terminate loop 
 	findall(P, player_hand_score(P, low,  _), LP_LIST),

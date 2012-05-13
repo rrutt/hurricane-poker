@@ -3,10 +3,10 @@ After the initial deal, the player
 seats are shown as follows:
 
 #1 --
-ö2 Q5
+Ã¶2 Q5
 #3=--
 
-The "ö" shows the seated human.
+The "Ã¶" shows the seated human.
 The "Q5" are the human's cards.
 The "--" are the opponents' cards.
 The "=" is the dealer's card deck.
@@ -16,7 +16,7 @@ money in the pot and the human's
 stake are shown:
 
  Pot: $3
- ö $99
+ Ã¶ $99
 
 The following symbols are used
 to display the betting action:
@@ -26,15 +26,15 @@ to display the betting action:
  =n Means the player Called $n
  x  Means the player Folded
 
- ±  Means the player Drew a card
+ Â±  Means the player Drew a card
  -  Means the player Held both cards
 
 For example, reading top to bottom,
 left to right:
 
-#1 -- # +1± # =3
-ö2 Q2 +2=1- +3
-#3=   =2=1± x
+#1 -- # +1Â± # =3
+Ã¶2 Q2 +2=1- +3
+#3=   =2=1Â± x
 
  #1 Checked, #2 Bet $2, #3 Called.
  #1 Raised $1, #2 and #3 called.
@@ -46,12 +46,12 @@ Finally, there is the Showdown,
 which uses three new symbols:
 
  $n Means the player won $n
- !  Means the player had High hand
- ¡ Means the player had Low hand
+ â–²  Means the player had High hand
+ â–¼ Means the player had Low hand
 
-#1¡54 # +1± # =3 $4
-ö2 Q2! +2=1- +3 $5
-#3=   =2=1± x
+#1â–¼54 # +1Â± # =3 $4
+Ã¶2 Q2â–² +2=1- +3 $5
+#3=   =2=1Â± x
 
  #1 had Low hand, winning $4.
  #2 had High hand, winning $5.
