@@ -241,7 +241,7 @@
   	peek_nl, peek_write("Modes:"), peek_nl, peek_write(" "),
 	player_mode(P, M),
 		M \= "dealer",
-		peek_write(" #"), peek_write(P), peek_write("="), peek_write(M),
+		peek_write(" #"), peek_write(P), peek_write("≡"), peek_write(M),
 		fail.
   peekaboo :-
     peek_enabled,
@@ -275,7 +275,7 @@
     peek_enabled,
   	peek_nl, peek_write("Hands:"), peek_nl, peek_write(" "),
   	player_hand(P, C1, C2),
-  		peek_write(" #"), peek_write(P), peek_write("="), peek_write(C1), peek_write(C2),
+  		peek_write(" #"), peek_write(P), peek_write("≡"), peek_write(C1), peek_write(C2),
   		fail.
   peekaboo :-
     peek_enabled,
@@ -314,7 +314,7 @@
 	!,
 	player_mode(P, dealer),
 	text_cursor(P, 2),
-	text_write("=").  % Triple-bar 
+	text_write("≡").  % Triple-bar 
 
   show_players(deal) :-
 	player_amt(P, stake, _),
