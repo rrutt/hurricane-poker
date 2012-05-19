@@ -80,22 +80,22 @@ public class HurricanePoker
 							+ TheoryResourceName);
 				}
 
-//				InputStreamReader isr = new InputStreamReader(theoryInputStream);
-//				BufferedReader br = new BufferedReader(isr);
-//				StringBuffer theoryBuffer = new StringBuffer();
-//
-//				String s = br.readLine();
-//				while (s != null) {
-//					// System.out.println(s);
-//					theoryBuffer.append(s);
-//					theoryBuffer.append('\n');
-//
-//					s = br.readLine();
-//				}
-//
-//				String theoryString = theoryBuffer.toString();
-//				t = new Theory(theoryString);
-				t = new Theory(theoryInputStream);
+				InputStreamReader isr = new InputStreamReader(theoryInputStream, "UTF-8");
+				BufferedReader br = new BufferedReader(isr);
+				StringBuffer theoryBuffer = new StringBuffer();
+
+				String s = br.readLine();
+				while (s != null) {
+					// System.out.println(s);
+					theoryBuffer.append(s);
+					theoryBuffer.append('\n');
+
+					s = br.readLine();
+				}
+
+				String theoryString = theoryBuffer.toString();
+				t = new Theory(theoryString);
+//				t = new Theory(theoryInputStream);
 			}
 			engine.setTheory(t);
 			SolveInfo info = engine.solve("x.");
