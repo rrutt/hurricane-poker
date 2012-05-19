@@ -9,15 +9,27 @@ package com.live.rrutt.tuprolog.util;
 public class TextWindow extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = -1212370239230155880L;
+	
+	public static final int windowX = 100;
+	public static final int windowY = 25;
+	public static final int windowWidth = 450;
+	public static final int windowHeight = 330;
 
 	private int cursorRow = 0;
-
 	private int cursorCol = 0;
 
 	public TextWindow() {
 		initComponents();
 		pack();
-		setSize(500, 340);
+		setSize(windowWidth, windowHeight);
+	}
+	
+	public void setDefaultBounds() {
+		setBounds(
+		  windowX, 
+		  windowY, 
+		  windowWidth,    
+		  windowHeight);
 	}
 
 	/**

@@ -11,10 +11,12 @@ import java.io.*;
 public class HurricanePoker 
 		extends javax.swing.JFrame 
 		implements Serializable, OutputListener, SpyListener {
-	
-    public Prolog engine;
 
 	private static final long serialVersionUID = 2785996048582414206L;
+	
+	public static final int windowHeight = 240;
+
+    public Prolog engine;
 
 	private static String TheoryResourceName = "com/live/rrutt/hurricane/HurricanePoker.pl";
 	
@@ -49,7 +51,13 @@ public class HurricanePoker
 		
 		initComponents();
 		pack();
-		setBounds(0, 350, 450, 250);
+		
+		setBounds(
+			TextWindow.windowX, 
+			TextWindow.windowY + TextWindow.windowHeight, 
+			TextWindow.windowWidth, 
+			windowHeight);
+		
 		engine = new Prolog();
 		try {
 			engine.loadLibrary("com.live.rrutt.tuprolog.lib.PrologPredicatesAndFunctors");
@@ -80,24 +88,26 @@ public class HurricanePoker
 							+ TheoryResourceName);
 				}
 
-//				InputStreamReader isr = new InputStreamReader(theoryInputStream);
-//				BufferedReader br = new BufferedReader(isr);
-//				StringBuffer theoryBuffer = new StringBuffer();
-//
-//				String s = br.readLine();
-//				while (s != null) {
-//					// System.out.println(s);
-//					theoryBuffer.append(s);
-//					theoryBuffer.append('\n');
-//
-//					s = br.readLine();
-//				}
-//
-//				String theoryString = theoryBuffer.toString();
-//				t = new Theory(theoryString);
-				t = new Theory(theoryInputStream);
+				InputStreamReader isr = new InputStreamReader(theoryInputStream, "UTF-8");
+				BufferedReader br = new BufferedReader(isr);
+				StringBuffer theoryBuffer = new StringBuffer();
+
+				String s = br.readLine();
+				while (s != null) {
+					// System.out.println(s);
+					theoryBuffer.append(s);
+					theoryBuffer.append('\n');
+
+					s = br.readLine();
+				}
+
+				String theoryString = theoryBuffer.toString();
+				t = new Theory(theoryString);
+//				t = new Theory(theoryInputStream);
 			}
 			engine.setTheory(t);
+			
+			@SuppressWarnings("unused")
 			SolveInfo info = engine.solve("x.");
 //			System.out.print(info);
 		} catch (Exception e) {
