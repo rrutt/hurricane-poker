@@ -1,7 +1,20 @@
+﻿<html>
+<head>
+<title>Rick Rutt's Hurricane Poker - Using the tuProlog system 2.2</title>
+</head>
+<body>
+<h1>Rick Rutt's Hurricane Poker - Using the tuProlog system 2.2</h1>
+<p>
+<a href='../out/HurricanePokerApplet.html'>Click here to run the Hurricane Poker applet.</a>
+</p>
+<p>
+<img src='as.gif' alt='Ace'></img>    
+<img src='2h.gif' alt='Deuce'></img>
+</p>    
 <p>
 Hurricane is two-card draw poker,
-deuces wild, played as high/low;
-aces, deuces play both high and low.
+deuces wild, played as high/low.
+Aces and deuces play both high and low.
 </p>
 <p>
 No straights, no flushes are used;
@@ -72,7 +85,7 @@ Eight players sit at the octagonal
 poker table.  The house randomly
 assigns you a seat (marked with ö)
 and picks the first dealer
-(marked with a card deck: =).
+(marked with a card deck: ≡).
 </p>
 <p>
 To start a hand, select "Deal" from
@@ -95,7 +108,7 @@ are then shown.
 Shorthand symbols are used to show
 the betting action.
 </p>
-<code>
+<pre>
 After the initial deal, the player
 seats are shown as follows:
 
@@ -153,14 +166,14 @@ which uses three new symbols:
  #1 had Low hand, winning $4.
  #2 had High hand, winning $5.
     (Odd chip goes to the High hand.)
-</code>
+</pre>
 <p>
 Just before exiting the game,
 the player information is shown,
 with the added information about
 what "strategy" each player used:
 </p>
-<code>
+<pre>
   random    Make arbitrary choices
 
   checker   Always Check, Call, Hold
@@ -183,9 +196,5 @@ what "strategy" each player used:
             are poor
 
   human     That's for YOU to decide!
-</code>
-<applet code = 'com.live.rrutt.hurricane.HurricanePokerApplet' 
-    archive = 'HurricanePoker.jar', 
-    width = '200', 
-    height = '200' />
-</body>
+</pre>
+</html>
