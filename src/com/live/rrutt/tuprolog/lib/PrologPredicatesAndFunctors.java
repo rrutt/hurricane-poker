@@ -26,7 +26,7 @@ public class PrologPredicatesAndFunctors extends Library {
 			textWindow = new TextWindow();
 		}
 
-		textWindow.setBounds(0, 0, 450, 350);
+		textWindow.setDefaultBounds();
 		textWindow.setVisible(true);
 	}
 

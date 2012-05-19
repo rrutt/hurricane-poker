@@ -68,6 +68,7 @@ public class MenuDialog extends javax.swing.JDialog {
 
 		javax.swing.JButton btn = null;
 		int i = 0;
+		@SuppressWarnings("rawtypes")
 		java.util.Iterator iter = choices.listIterator();
 		while (iter.hasNext()) {
 			i++;
